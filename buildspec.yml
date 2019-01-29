@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Starting the build
+  build:
+    commands:
+      - echo Build started on `date`
+      - composer install
+      - npm install
+  post_build:
+    commands:
+      - php artisan cache:clear
